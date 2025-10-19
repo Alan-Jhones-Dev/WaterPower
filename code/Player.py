@@ -1,10 +1,10 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-from Entily import Entily
+from Entity import Entity
 
 
-class Player(Entily):
+class Player(Entity):
     def __init__(self):
         pass
 

@@ -1,11 +1,21 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
+import pygame
+
+from code.Entity import Entity
+from code.entityFactory import EntityFactory
+
 
 class Level:
-    def __init__(self):
-        self.nome = None
-        self.window = None
-        self.entily_list = None
+    def __init__(self, window, name):
+        self.window = window
+        self.name = name
+        self.entity_list: list[Entity] = []
+        self.entity_list.extend(EntityFactory.get_entity('level1Bg'))
 
-    def run(self, ):
+    def run(self):
+        while True:
+            for ent in self.entity_list:
+                self.window.blit(source=ent.surf, dest=ent.rect)
+            pygame.display.flip()
         pass
